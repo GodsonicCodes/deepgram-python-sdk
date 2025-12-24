@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: voltar-voice-agent
+    runtime: python
+    plan: starter
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+      # Install Deepgram SDK from parent directory if in development
+      # pip install -e ../
+    startCommand: python main.py
+    envVars:
+      - key: DEEPGRAM_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: DEEPGRAM_MODEL
+        value: nova-2
+      - key: CLAUDE_MODEL
+        value: claude-sonnet-4-20250514
+      - key: PORT
+        value: 10000
+    healthCheckPath: /api/health

@@ -1,0 +1,22 @@
+# Voltar AI Voice Agent - Dependencies
+
+# Web framework
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
+websockets==12.0
+
+# Deepgram SDK (use local development version)
+# deepgram-sdk>=5.0.0
+
+# Anthropic Claude API
+anthropic==0.25.0
+
+# Data validation
+pydantic==2.5.0
+
+# Environment variables
+python-dotenv==1.0.0
+
+# Utilities
+python-multipart==0.0.6
+aiofiles==23.2.1
